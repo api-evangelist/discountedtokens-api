@@ -1,0 +1,55 @@
+name: DiscountedTokens API
+description: >-
+  An independent, third-party prepaid API reseller providing OpenAI/Anthropic-compatible access to frontier GPT-family
+  models via a single Bearer key. Exposes OpenAI Chat, OpenAI Responses, and Anthropic Messages compatible endpoints
+  with usage-based prepaid billing (no subscription, no free trial).
+url: https://raw.githubusercontent.com/api-evangelist/discountedtokens-api/refs/heads/main/apis.yml
+created: '2026-09-17'
+modified: '2026-09-17'
+specificationVersion: '0.21'
+tags:
+  - AI
+  - LLM
+  - Generative AI Inference
+  - OpenAI-Compatible
+  - Anthropic-Compatible
+  - API Reseller
+  - Aggregator
+  - Prepaid
+  - Usage-Based
+  - Developer Tools
+  - AI Infrastructure
+apis:
+  - name: DiscountedTokens API
+    description: >-
+      OpenAI/Anthropic-compatible REST API for LLM inference with prepaid Bearer-key authentication. Documents
+      /chat/completions, /responses, /messages, and /models via a public OpenAPI 3.1.0 contract.
+    humanURL: https://discountedtokens.com/docs
+    baseURL: https://discountedtokens.com/v1
+    tags:
+      - AI
+      - LLM
+      - Generative AI Inference
+      - OpenAI-Compatible
+      - Anthropic-Compatible
+      - API Reseller
+      - Aggregator
+      - Prepaid
+      - Usage-Based
+      - Developer Tools
+      - AI Infrastructure
+    properties:
+      - type: OpenAPI
+        url: https://discountedtokens.com/openapi.json
+      - type: Documentation
+        url: https://discountedtokens.com/docs
+      - type: LLMsTxt
+        url: https://discountedtokens.com/llms.txt
+maintainers:
+  - FN: DiscountedTokens Support
+    url: mailto:support@discountedtokens.com
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 95
+  at: '2026-09-17T12:23:03.989Z'
