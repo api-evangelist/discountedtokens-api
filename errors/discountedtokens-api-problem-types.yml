@@ -1,0 +1,36 @@
+generated: '2026-09-17'
+method: derived
+format: openai-error-envelope
+source: >-
+  Derived from the 4xx responses declared in openapi/discountedtokens-api-openapi.json (OpenAPI
+  3.1.0, 4 operations) and confirmed against live unauthenticated responses on
+  https://discountedtokens.com/v1 (2026-09-17). The inference API does NOT use RFC 9457
+  application/problem+json; it returns the OpenAI-style { "error": { "message": ... } } envelope.
+  (Note: the /.well-known/ meta endpoints DO return application/problem+json 410s, but the API
+  surface itself does not — see conformance.)
+rfc9457: false
+envelope:
+  media_type: application/json
+  shape: '{ "error": { "message": string } }'
+  note: OpenAI-compatible error envelope, observed live on 401 (Missing API key) and 404 (Unknown path).
+problems:
+  - status: 401
+    title: Unauthorized (Invalid or missing key)
+    meaning: The request carried no API key, or a key the reseller does not recognize.
+    observed: '{"error":{"message":"Missing API key"}}'
+    declared_on: [createChatCompletion]
+    remediation: 'Send a valid prepaid key as `Authorization: Bearer <key>` (or `x-api-key` on /messages).'
+  - status: 402
+    title: Payment Required (Insufficient credits)
+    meaning: The prepaid balance on the key is exhausted; the request was not served.
+    declared_on: [createChatCompletion]
+    remediation: Top up prepaid credits at https://discountedtokens.com/guest before retrying.
+  - status: 404
+    title: Not Found (Unknown path)
+    meaning: The path is not routed by the reseller (e.g. GET /v1 with no resource).
+    observed: '{"error":{"message":"Unknown path"}}'
+    remediation: Use one of the documented paths — /v1/models, /v1/chat/completions, /v1/responses, /v1/messages.
+coverage:
+  note: >-
+    The spec declares only 401 and 402 on createChatCompletion; /responses, /messages and /models
+    declare only 200. The error envelope above is shared across the surface, observed live.

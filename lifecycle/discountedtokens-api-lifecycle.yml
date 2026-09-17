@@ -1,0 +1,30 @@
+generated: '2026-09-17'
+method: searched
+source: >-
+  openapi/discountedtokens-api-openapi.json + https://discountedtokens.com/llms.txt +
+  live probes of discountedtokens.com (2026-09-17).
+summary: >-
+  A single unversioned /v1 surface. The provider publishes an observed status page and an RSS
+  product-updates feed, but no formal versioning, deprecation or SLA policy. No operation is marked
+  deprecated and no Sunset/Deprecation headers are emitted.
+versioning:
+  scheme: unversioned-path
+  path_segment: /v1
+  spec_declared_version: 1.0.0
+  note: The /v1 segment carries no minor/date version; info.version reads 1.0.0.
+deprecation:
+  policy_documented: false
+  deprecated_operations: []
+  sunset_header: false
+  note: No deprecation policy, no Deprecation/Sunset (RFC 8594) headers, no operation flagged deprecated in the spec.
+status_page:
+  url: https://discountedtokens.com/status
+  kind: observed-status (self-published, client-rendered SPA)
+  probed_status: 200
+  note: Also referenced from /.well-known/api-catalog service-meta and llms.txt.
+sla:
+  documented: false
+  note: No uptime SLA is published; the status page is described as "observed" status.
+change_signal:
+  changelog_feed: https://discountedtokens.com/updates.xml
+  see: changelog/discountedtokens-api-changelog.yml

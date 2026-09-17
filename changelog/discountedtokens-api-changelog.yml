@@ -1,0 +1,29 @@
+generated: '2026-09-17'
+method: searched
+source: https://discountedtokens.com/updates.xml
+checked: '2026-09-17'
+summary: >-
+  A machine-readable RSS product-updates feed is published at /updates.xml (application/rss+xml,
+  200) and referenced from the RFC 9727 api-catalog. Three dated entries, all 2026-08-27. The raw
+  feed is saved verbatim at changelog/discountedtokens-api-updates.xml.
+scheme:
+  format: rss-2.0
+  channel_title: DiscountedTokens product updates
+  human_page: https://discountedtokens.com/updates
+feeds:
+  rss: https://discountedtokens.com/updates.xml
+  atom: null
+  json: null
+entries:
+  - title: Affiliate program launched
+    date: '2026-08-27'
+    breaking: false
+  - title: Client integration tutorials published
+    date: '2026-08-27'
+    breaking: false
+  - title: Observed service status published
+    date: '2026-08-27'
+    breaking: false
+note: >-
+  The feed carries product/marketing milestones rather than API version deltas; no breaking-change
+  entries and no version identifiers appear. It is the only dated change signal the provider exposes.

@@ -1,0 +1,66 @@
+generated: '2026-09-17'
+method: derived
+source: >-
+  openapi/discountedtokens-api-openapi.json + https://discountedtokens.com/llms.txt +
+  live probes of https://discountedtokens.com/v1 (2026-09-17).
+summary: >-
+  Cross-cutting semantics for the DiscountedTokens reseller API. It is a thin OpenAI/Anthropic-
+  compatible pass-through: three inference write operations plus a model-list read, one prepaid
+  Bearer key, and an OpenAI-style error envelope. No idempotency, pagination, expansion, or
+  request-tracing conventions are documented, and no reversal surface exists.
+authentication:
+  styles: [bearer_token, api_key_header]
+  bearer: 'Authorization: Bearer <prepaid-key>  (OpenAI + Responses compatible)'
+  api_key_header: 'x-api-key: <prepaid-key>  (accepted on /messages, Anthropic-compatible)'
+  see: authentication/discountedtokens-api-authentication.yml
+client_integration:
+  note: >-
+    No first-party SDK is published (absent from npm and PyPI, 2026-09-17). The provider is designed
+    to be called with the stock OpenAI, OpenAI Responses, or Anthropic clients by overriding the
+    base URL to https://discountedtokens.com/v1. This is the documented integration path (llms.txt).
+pagination:
+  style: none
+  note: /models returns a single unpaginated { object:"list", data:[...] } of 3 models; inference calls are not list surfaces.
+streaming:
+  supported: true
+  note: createChatCompletion accepts a `stream` boolean (OpenAI-compatible SSE streaming); observed in the request schema.
+versioning:
+  style: unversioned-path
+  path_segment: /v1
+  spec_declared: 1.0.0
+  note: The /v1 segment has not moved; info.version reads 1.0.0. See lifecycle/.
+error_envelope:
+  media_type: application/json
+  shape: '{ "error": { "message": string } }'
+  see: errors/discountedtokens-api-problem-types.yml
+rate_limit_signaling:
+  documented: false
+  observed_headers: none
+  note: >-
+    No X-RateLimit-*/RateLimit-*/Retry-After headers were returned on live unauthenticated responses
+    (Cloudflare-fronted). See rate-limits/. Billing, not a request quota, is the documented governor.
+request_tracing:
+  documented: false
+  note: No provider request-id header is documented; responses carry only Cloudflare's cf-ray.
+idempotency:
+  documented: false
+  header: null
+  coverage: none
+  note: >-
+    No Idempotency-Key mechanism is documented and none appears in the OpenAPI. The mutating surface
+    (/chat/completions, /responses, /messages) is billed per successful request with no replay
+    primitive, so a client that retries a timed-out inference call has no safe-replay guarantee and
+    may be billed twice. No `Idempotency` pointer is emitted — this is a genuine zero, not a missing
+    pointer.
+reversibility:
+  applicable: true
+  grade: none
+  reversal_operations: []
+  note: >-
+    The write surface is LLM inference (generation) plus prepaid billing. No reversal operation
+    (cancel/refund/void/undo) is exposed in the API and no refund window is documented; the terms
+    describe successful requests as billed. An agent cannot un-send or refund a completion through
+    the API. Recorded as an honest `none` (a write surface with no reversal path), not `na`.
+dry_run_mode:
+  supported: false
+  note: No dry-run/simulation mode is documented; /v1/models (a free read of prices) is the only way to preview cost before a billed call.

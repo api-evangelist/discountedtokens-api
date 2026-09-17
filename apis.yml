@@ -7,6 +7,7 @@ url: https://raw.githubusercontent.com/api-evangelist/discountedtokens-api/refs/
 created: '2026-09-17'
 modified: '2026-09-17'
 specificationVersion: '0.21'
+image: https://discountedtokens.com/og-image.png
 tags:
   - AI
   - LLM
@@ -26,6 +27,7 @@ apis:
       /chat/completions, /responses, /messages, and /models via a public OpenAPI 3.1.0 contract.
     humanURL: https://discountedtokens.com/docs
     baseURL: https://discountedtokens.com/v1
+    image: https://discountedtokens.com/og-image.png
     tags:
       - AI
       - LLM
@@ -40,16 +42,80 @@ apis:
       - AI Infrastructure
     properties:
       - type: OpenAPI
+        url: openapi/discountedtokens-api-openapi.json
+      - type: OpenAPI
+        name: Provider-hosted OpenAPI
         url: https://discountedtokens.com/openapi.json
       - type: Documentation
         url: https://discountedtokens.com/docs
+      - type: GettingStarted
+        url: https://discountedtokens.com/tutorials
       - type: LLMsTxt
+        url: llms/discountedtokens-api-llms.txt
+      - type: LLMsTxt
+        name: Provider-hosted llms.txt
         url: https://discountedtokens.com/llms.txt
+      - type: Conventions
+        url: conventions/discountedtokens-api-conventions.yml
+      - type: ErrorCatalog
+        url: errors/discountedtokens-api-problem-types.yml
+      - type: Lifecycle
+        url: lifecycle/discountedtokens-api-lifecycle.yml
+      - type: ChangeLog
+        url: changelog/discountedtokens-api-changelog.yml
+      - type: ChangeLog
+        name: Provider product-updates feed
+        url: https://discountedtokens.com/updates.xml
+      - type: Plans
+        url: plans/discountedtokens-api-plans-pricing.yml
+      - type: RateLimits
+        url: rate-limits/discountedtokens-api-rate-limits.yml
+      - type: X-MCPServerCandidate
+        url: mcp/discountedtokens-api-mcp.yml
+      - type: AgentSkill
+        url: skills/_index.yml
 maintainers:
   - FN: DiscountedTokens Support
-    url: mailto:support@discountedtokens.com
-generated:
+    email: support@discountedtokens.com
+    url: https://discountedtokens.com/contact
+x-generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 95
   at: '2026-09-17T12:23:03.989Z'
+common:
+- type: VulnerabilityDisclosure
+  url: security/discountedtokens-api-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/discountedtokens-api-domain-security.yml
+- type: Authentication
+  url: authentication/discountedtokens-api-authentication.yml
+- type: Security
+  url: security/discountedtokens-api-vulnerability-disclosure.yml
+- type: WellKnown
+  url: well-known/discountedtokens-api-well-known.yml
+- type: SecurityTxt
+  url: well-known/discountedtokens-api-security.txt
+- type: Conformance
+  url: conformance/discountedtokens-api-conformance.yml
+- type: Website
+  url: https://discountedtokens.com/
+- type: StatusPage
+  url: https://discountedtokens.com/status
+- type: Pricing
+  url: https://discountedtokens.com/pricing
+- type: TermsOfService
+  url: https://discountedtokens.com/terms
+- type: PrivacyPolicy
+  url: https://discountedtokens.com/privacy
+- type: Support
+  url: https://discountedtokens.com/contact
+- type: SignUp
+  url: https://discountedtokens.com/guest
+- type: Blog
+  url: https://discountedtokens.com/updates
+x-enrichment:
+  date: '2026-09-17'
+  status: enriched
+  artifacts_added: 19
+  pass: local-v3

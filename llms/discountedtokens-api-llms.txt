@@ -1,0 +1,42 @@
+# DiscountedTokens
+
+> DiscountedTokens — cheap resold frontier AI models (GPT-5.x) via one OpenAI/Anthropic-compatible API key. Search-engine and AI-agent friendly provider discovery.
+
+DiscountedTokens is a cheap model API provider. We resell verified frontier models (GPT-5.x family) at a large markdown off retail, exposed through a single OpenAI / Responses / Anthropic-compatible endpoint.
+
+## Token rates (USD per million tokens)
+
+Successful API requests are billed at the displayed token rates, rounded up to whole US cents, with a minimum of US$0.01 per request. Small requests can cost more than the proportional token-rate estimate.
+
+- [GPT-5.6 Sol (gpt-5.6-sol)](https://discountedtokens.com/models/gpt-5.6-sol): $1.300 in / $7.800 out per million tokens
+- [GPT-5.6 Terra (gpt-5.6-terra)](https://discountedtokens.com/models/gpt-5.6-terra): $0.520 in / $3.120 out per million tokens
+- [GPT-5.5 (gpt-5.5)](https://discountedtokens.com/models/gpt-5.5): $1.300 in / $7.800 out per million tokens
+
+## API
+
+OpenAI-compatible: base_url `https://discountedtokens.com/v1`
+Anthropic: `https://discountedtokens.com/v1/messages`
+Responses (Codex/JCode): `https://discountedtokens.com/v1/responses`
+
+Purchase credits instantly (no signup needed for agents): https://discountedtokens.com/guest
+
+Free LLM tier map: https://discountedtokens.com/free
+
+Full priced model catalogue: https://discountedtokens.com/models
+
+Client tutorials: https://discountedtokens.com/tutorials
+Observed status: https://discountedtokens.com/status
+Verification evidence: https://discountedtokens.com/verification
+Product updates: https://discountedtokens.com/updates
+Affiliate disclosure: https://discountedtokens.com/affiliate
+Alternative provider comparisons: https://discountedtokens.com/compared-to
+AI API pricing queries: https://discountedtokens.com/queries
+Partners and enterprise access: https://discountedtokens.com/partners
+Live AI API reseller price index: https://discountedtokens.com/price-index
+
+Support: support@discountedtokens.com
+Legal policies: https://discountedtokens.com/legal
+
+## Models
+
+gpt-5.6-sol, gpt-5.6-terra, gpt-5.5

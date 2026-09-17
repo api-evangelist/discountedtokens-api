@@ -1,0 +1,41 @@
+generated: '2026-09-17'
+method: searched
+source: https://discountedtokens.com/llms.txt + https://discountedtokens.com/v1/models (live, 2026-09-17)
+summary: >-
+  Pure usage-based prepaid pricing — no subscription tiers, no free trial, no monthly plans. Credits
+  are purchased up front (guest checkout, no signup required for agents) and drawn down per request.
+  There are no named plan tiers, so plan_count is 0; the priced surface is the per-model token rate.
+pricing_model: usage-based-prepaid
+plan_count: 0
+billing:
+  unit: tokens
+  currency: USD
+  minimum_charge_per_request: 0.01
+  rounding: rounded up to whole US cents
+  note: >-
+    Successful requests are billed at the displayed token rates, minimum US$0.01 per request; small
+    requests can cost more than the proportional token-rate estimate.
+purchase:
+  method: prepaid credits, guest checkout
+  url: https://discountedtokens.com/guest
+  signup_required: false
+model_rates:
+  currency_per_million_tokens: USD
+  models:
+    - id: gpt-5.6-sol
+      input_per_mtok: 1.30
+      output_per_mtok: 7.80
+    - id: gpt-5.6-terra
+      input_per_mtok: 0.52
+      output_per_mtok: 3.12
+    - id: gpt-5.5
+      input_per_mtok: 1.30
+      output_per_mtok: 7.80
+  source: >-
+    Rates read from llms.txt and confirmed against the live /v1/models pricing object
+    (prompt/completion USD-per-token) on 2026-09-17.
+pages:
+  pricing: https://discountedtokens.com/pricing
+  model_catalogue: https://discountedtokens.com/models
+  free_tier_map: https://discountedtokens.com/free
+  price_index: https://discountedtokens.com/price-index

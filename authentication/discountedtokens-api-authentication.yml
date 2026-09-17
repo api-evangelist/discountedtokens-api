@@ -1,0 +1,21 @@
+generated: '2026-09-17'
+method: derived
+source: openapi/discountedtokens-api-openapi.json
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/discountedtokens-api-openapi.json
+- name: apiKeyAuth
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  sources:
+  - openapi/discountedtokens-api-openapi.json

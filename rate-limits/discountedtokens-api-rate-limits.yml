@@ -1,0 +1,19 @@
+generated: '2026-09-17'
+method: probed
+source: live responses from https://discountedtokens.com/v1 + https://discountedtokens.com/llms.txt (2026-09-17)
+summary: >-
+  No request-rate limits are documented and none were observed. Live responses (Cloudflare-fronted)
+  carried no X-RateLimit-*/RateLimit-*/Retry-After headers, and neither the docs nor llms.txt state a
+  per-key or per-account request ceiling. The documented governor is the prepaid credit balance
+  (HTTP 402 on exhaustion), not a rate quota.
+limit_count: 0
+observed_headers: none
+governor:
+  type: prepaid-balance
+  exhaustion_status: 402
+  note: Requests are gated by remaining prepaid credits rather than a rolling request window.
+probed:
+  - url: https://discountedtokens.com/v1/models
+    status: 200
+    ratelimit_headers: none
+    note: Only Cloudflare edge headers (cf-ray, report-to, nel) present.

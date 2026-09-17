@@ -1,0 +1,59 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://discountedtokens.com/v1",
+      "item": [
+        {
+          "href": "https://discountedtokens.com/v1/models"
+        },
+        {
+          "href": "https://discountedtokens.com/v1/chat/completions"
+        },
+        {
+          "href": "https://discountedtokens.com/v1/responses"
+        },
+        {
+          "href": "https://discountedtokens.com/v1/messages"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://discountedtokens.com/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://discountedtokens.com/docs",
+          "type": "text/html"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://discountedtokens.com/pricing",
+          "type": "text/html"
+        },
+        {
+          "href": "https://discountedtokens.com/status",
+          "type": "text/html"
+        },
+        {
+          "href": "https://discountedtokens.com/verification",
+          "type": "text/html"
+        },
+        {
+          "href": "https://discountedtokens.com/updates.xml",
+          "type": "application/rss+xml"
+        },
+        {
+          "href": "https://discountedtokens.com/terms",
+          "type": "text/html"
+        },
+        {
+          "href": "https://discountedtokens.com/acceptable-use",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

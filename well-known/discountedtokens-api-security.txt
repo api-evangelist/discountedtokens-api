@@ -1,0 +1,5 @@
+Contact: mailto:support@discountedtokens.com
+Canonical: https://discountedtokens.com/.well-known/security.txt
+Policy: https://discountedtokens.com/acceptable-use
+Expires: 2027-08-25T00:00:00Z
+Preferred-Languages: en

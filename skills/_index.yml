@@ -1,0 +1,12 @@
+generated: '2026-09-17'
+method: generated
+source: openapi/discountedtokens-api-openapi.json
+api: DiscountedTokens API
+skills:
+  - file: discountedtokens-api-chat-completion.md
+    name: discountedtokens-chat-completion
+    description: Call a resold GPT-5.x model through the OpenAI-compatible chat completion endpoint with a prepaid key.
+    operations: [listModels, createChatCompletion]
+note: >-
+  Skills are grounded in real operationIds from the captured OpenAPI. Only the chat-completion flow
+  is packaged; /responses and /messages are the same pattern with a different compatible shape.

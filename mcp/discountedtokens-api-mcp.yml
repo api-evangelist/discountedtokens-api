@@ -1,0 +1,32 @@
+generated: '2026-09-17'
+method: derived
+source: openapi/discountedtokens-api-openapi.json
+status: candidate
+summary: >-
+  No official MCP server is published. /mcp and /.well-known/mcp.json return 404, tools/list POST
+  returns 404, and llms.txt names no MCP endpoint. The tools below are a DERIVED candidate mapping of
+  the four REST operations — not a shipped server. The provider's designed integration path is the
+  stock OpenAI/Anthropic clients with base_url overridden, not MCP.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: api-key
+  verified: derived
+tools:
+  - name: list_models
+    rest: [listModels]
+    description: List available resold models and their live per-token prices.
+  - name: create_chat_completion
+    rest: [createChatCompletion]
+    description: OpenAI-compatible chat completion against a GPT-5.x resold model.
+  - name: create_response
+    rest: [createResponse]
+    description: OpenAI Responses-compatible generation (Codex/JCode shape).
+  - name: create_anthropic_message
+    rest: [createAnthropicMessage]
+    description: Anthropic Messages-compatible generation.
+note: >-
+  mode:none is deliberate — nobody ships a server. No endpoint URL is invented; a guessed MCP path
+  that happened to 200 would read as a verified agent surface, which this provider does not offer.

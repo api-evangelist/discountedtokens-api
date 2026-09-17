@@ -1,0 +1,58 @@
+generated: '2026-09-17'
+method: probed
+source: live probes of /.well-known/ on discountedtokens.com hosts
+summary: >-
+  Two real /.well-known/ documents are served on discountedtokens.com: an RFC 9727 API catalog
+  (application/linkset+json, 200) and an RFC 9116 security.txt (200). That is a genuine WellKnown
+  hit and the pointer is earned; the served security.txt also earns a SecurityTxt pointer. The
+  provider EXPLICITLY retires the agent surfaces: /.well-known/ai-plugin.json, agent-card.json and
+  agent.json all return 410 problem+json ("A2A discovery is not implemented ... this is an inference
+  API, not an A2A task server"), so NO AgentCard pointer is written. No OAuth/OIDC discovery is
+  served (bearer + x-api-key only).
+pointer_basis: >-
+  WellKnown emitted on the strength of the api-catalog and security.txt 200s. SecurityTxt emitted
+  on the security.txt 200. AgentCard NOT emitted — the two agent-card paths return an honest 410
+  declaring the surface unimplemented.
+hosts:
+  - host: https://discountedtokens.com
+    documents:
+      - path: /.well-known/api-catalog          # RFC 9727 linkset
+        status: 200
+        content_type: application/linkset+json
+        file: discountedtokens-api-api-catalog.json
+      - path: /.well-known/security.txt         # RFC 9116
+        status: 200
+        content_type: text/plain
+        file: discountedtokens-api-security.txt
+      - path: /.well-known/ai-plugin.json
+        status: 410
+        content_type: application/problem+json
+        body: 'ChatGPT plugin discovery is retired — use the OpenAPI description or RFC 9727 API catalog.'
+      - path: /.well-known/agent-card.json
+        status: 410
+        content_type: application/problem+json
+        body: 'A2A discovery is not implemented — DiscountedTokens is an inference API, not an A2A task server.'
+      - path: /.well-known/agent.json
+        status: 410
+        content_type: application/problem+json
+        body: 'A2A discovery is not implemented (legacy path).'
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+  - host: https://www.discountedtokens.com
+    documents:
+      - path: /
+        status: 200
+        note: www resolves and serves the same SPA; /.well-known/ documents are served from the apex host.
+a2a:
+  agent_card_found: false
+  hosts_probed: [discountedtokens.com]
+  paths_probed: [/.well-known/agent-card.json, /.well-known/agent.json]
+  checked: '2026-09-17'
+  result: >-
+    Both A2A card paths return HTTP 410 with a problem+json body stating A2A discovery is not
+    implemented. No a2a/ artifact and no AgentCard pointer are written — the provider has explicitly
+    declined the surface.

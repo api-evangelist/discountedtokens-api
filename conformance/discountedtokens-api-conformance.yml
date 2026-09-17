@@ -1,0 +1,50 @@
+generated: '2026-09-17'
+method: searched
+source: >-
+  openapi/discountedtokens-api-openapi.json + live /.well-known/ probes on discountedtokens.com
+  (2026-09-17).
+standards:
+  - id: openapi-3.1
+    conforms: true
+    evidence: Provider serves a valid OpenAPI 3.1.0 document at https://discountedtokens.com/openapi.json (200), captured to openapi/discountedtokens-api-openapi.json.
+  - id: rfc9727-api-catalog
+    conforms: true
+    evidence: /.well-known/api-catalog returns a valid RFC 9727 linkset (application/linkset+json, 200) enumerating the v1 endpoints, service-desc, service-doc and service-meta.
+  - id: rfc9116-security-txt
+    conforms: true
+    evidence: /.well-known/security.txt returns a valid RFC 9116 document (200) with Contact, Canonical, Policy, Expires and Preferred-Languages.
+  - id: rfc9457-problem-details
+    conforms: partial
+    evidence: >-
+      The API surface returns the OpenAI-style {"error":{"message":...}} envelope, NOT
+      application/problem+json. The /.well-known/ meta endpoints (ai-plugin.json, agent-card.json)
+      DO emit application/problem+json 410s, so problem+json is used for discovery but not for API errors.
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth2/OIDC — /.well-known/openid-configuration and /oauth-authorization-server both 404. Auth is a prepaid Bearer key / x-api-key.
+  - id: a2a
+    conforms: false
+    evidence: /.well-known/agent-card.json and agent.json return 410 declaring A2A discovery unimplemented ("an inference API, not an A2A task server").
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: No Deprecation/Sunset headers or deprecation policy documented; no operation is marked deprecated.
+domain_standard:
+  - id: openai-chat-completions-compatible
+    conforms: true
+    evidence: >-
+      The contract declares an OpenAI Chat Completions-shaped surface — POST /chat/completions with
+      the {model, messages, max_tokens, stream} request body and Bearer auth (openapi paths./chat/completions).
+      This is the de-facto interoperability standard of the LLM-inference market: a consumer already
+      speaking the OpenAI wire format integrates with no bespoke connector by overriding base_url.
+    market_significance: >-
+      OpenAI Chat Completions / Responses and Anthropic Messages are the interchange standards for
+      resold frontier-model inference; declaring all three is this provider's whole value proposition.
+  - id: openai-responses-compatible
+    conforms: true
+    evidence: POST /responses (operationId createResponse) exposes the OpenAI Responses-compatible shape (openapi paths./responses).
+  - id: anthropic-messages-compatible
+    conforms: true
+    evidence: POST /messages (operationId createAnthropicMessage) exposes the Anthropic Messages-compatible shape, accepting the Anthropic x-api-key header (openapi paths./messages).
+notes: >-
+  Reward-only: this provider's market (LLM inference resale) has a real de-facto standard trio and
+  the contract declares all three. No conformance was invented to fill a slot.
