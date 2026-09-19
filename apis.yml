@@ -9,6 +9,18 @@ modified: '2026-09-17'
 specificationVersion: '0.21'
 image: https://discountedtokens.com/og-image.png
 tags:
+  - Artificial Intelligence
+  - LLM
+  - Generative AI Inference
+  - OpenAI-Compatible
+  - Anthropic Compatible
+  - API Reseller
+  - Aggregator
+  - Prepaid
+  - Usage-Based
+  - Developer Tools
+  - AI Infrastructure
+tags_raw:
   - AI
   - LLM
   - Generative AI Inference
@@ -29,6 +41,18 @@ apis:
     baseURL: https://discountedtokens.com/v1
     image: https://discountedtokens.com/og-image.png
     tags:
+      - Artificial Intelligence
+      - LLM
+      - Generative AI Inference
+      - OpenAI-Compatible
+      - Anthropic Compatible
+      - API Reseller
+      - Aggregator
+      - Prepaid
+      - Usage-Based
+      - Developer Tools
+      - AI Infrastructure
+    tags_raw:
       - AI
       - LLM
       - Generative AI Inference
