@@ -1,0 +1,40 @@
+openapi: 3.2.0
+info:
+  title: DiscountedTokens Responses API
+  version: 1.0.0
+  description: 'DiscountedTokens — cheap resold frontier AI models (GPT-5.x) via one OpenAI/Anthropic-compatible API key. Search-engine and AI-agent friendly provider discovery.
+
+
+    Successful API requests are billed at the displayed token rates, rounded up to whole US cents, with a minimum of US$0.01 per request. Small requests can cost more than the proportional token-rate estimate.'
+  contact:
+    email: support@discountedtokens.com
+    url: https://discountedtokens.com/contact
+  termsOfService: https://discountedtokens.com/terms
+servers:
+- url: https://discountedtokens.com/v1
+tags:
+- name: Responses
+paths:
+  /responses:
+    post:
+      operationId: createResponse
+      summary: Create an OpenAI Responses-compatible response
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Response
+      tags:
+      - Responses
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+externalDocs:
+  description: Integration documentation
+  url: https://discountedtokens.com/docs

@@ -1,0 +1,69 @@
+openapi: 3.2.0
+info:
+  title: DiscountedTokens Chat API
+  version: 1.0.0
+  description: 'DiscountedTokens — cheap resold frontier AI models (GPT-5.x) via one OpenAI/Anthropic-compatible API key. Search-engine and AI-agent friendly provider discovery.
+
+
+    Successful API requests are billed at the displayed token rates, rounded up to whole US cents, with a minimum of US$0.01 per request. Small requests can cost more than the proportional token-rate estimate.'
+  contact:
+    email: support@discountedtokens.com
+    url: https://discountedtokens.com/contact
+  termsOfService: https://discountedtokens.com/terms
+servers:
+- url: https://discountedtokens.com/v1
+tags:
+- name: Chat
+paths:
+  /chat/completions:
+    post:
+      operationId: createChatCompletion
+      summary: Create an OpenAI-compatible chat completion
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model
+              - messages
+              properties:
+                model:
+                  type: string
+                  enum:
+                  - gpt-5.6-sol
+                  - gpt-5.6-terra
+                  - gpt-5.5
+                messages:
+                  type: array
+                  items:
+                    type: object
+                max_tokens:
+                  type: integer
+                  minimum: 1
+                stream:
+                  type: boolean
+      responses:
+        '200':
+          description: Completion
+        '401':
+          description: Invalid key
+        '402':
+          description: Insufficient credits
+      tags:
+      - Chat
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+externalDocs:
+  description: Integration documentation
+  url: https://discountedtokens.com/docs

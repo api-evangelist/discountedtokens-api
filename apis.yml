@@ -33,71 +33,142 @@ tags_raw:
   - Developer Tools
   - AI Infrastructure
 apis:
-  - name: DiscountedTokens API
-    description: >-
-      OpenAI/Anthropic-compatible REST API for LLM inference with prepaid Bearer-key authentication. Documents
-      /chat/completions, /responses, /messages, and /models via a public OpenAPI 3.1.0 contract.
-    humanURL: https://discountedtokens.com/docs
-    baseURL: https://discountedtokens.com/v1
-    image: https://discountedtokens.com/og-image.png
-    tags:
-      - Artificial Intelligence
-      - LLM
-      - Generative AI Inference
-      - OpenAI-Compatible
-      - Anthropic Compatible
-      - API Reseller
-      - Aggregator
-      - Prepaid
-      - Usage-Based
-      - Developer Tools
-      - AI Infrastructure
-    tags_raw:
-      - AI
-      - LLM
-      - Generative AI Inference
-      - OpenAI-Compatible
-      - Anthropic-Compatible
-      - API Reseller
-      - Aggregator
-      - Prepaid
-      - Usage-Based
-      - Developer Tools
-      - AI Infrastructure
-    properties:
-      - type: OpenAPI
-        url: openapi/discountedtokens-api-openapi.json
-      - type: OpenAPI
-        name: Provider-hosted OpenAPI
-        url: https://discountedtokens.com/openapi.json
-      - type: Documentation
-        url: https://discountedtokens.com/docs
-      - type: GettingStarted
-        url: https://discountedtokens.com/tutorials
-      - type: LLMsTxt
-        url: llms/discountedtokens-api-llms.txt
-      - type: LLMsTxt
-        name: Provider-hosted llms.txt
-        url: https://discountedtokens.com/llms.txt
-      - type: Conventions
-        url: conventions/discountedtokens-api-conventions.yml
-      - type: ErrorCatalog
-        url: errors/discountedtokens-api-problem-types.yml
-      - type: Lifecycle
-        url: lifecycle/discountedtokens-api-lifecycle.yml
-      - type: ChangeLog
-        url: changelog/discountedtokens-api-changelog.yml
-      - type: ChangeLog
-        name: Provider product-updates feed
-        url: https://discountedtokens.com/updates.xml
-      - type: Plans
-        url: plans/discountedtokens-api-plans-pricing.yml
-      - type: RateLimits
-        url: rate-limits/discountedtokens-api-rate-limits.yml
-      - type: X-MCPServerCandidate
-        url: mcp/discountedtokens-api-mcp.yml
-      - type: AgentSkill
-        url: skills/_index.yml
+- aid: discountedtokens-api:discountedtokens-api-chat-api
+  name: DiscountedTokens API Chat API
+  description: The Chat API from DiscountedTokens API — 1 operation(s) for chat.
+  humanURL: https://discountedtokens.com/docs
+  baseURL: https://discountedtokens.com/v1
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/discountedtokens-api-chat-api-openapi.yml
+  - type: Documentation
+    url: https://discountedtokens.com/docs
+  - type: GettingStarted
+    url: https://discountedtokens.com/tutorials
+  - type: LLMsTxt
+    url: llms/discountedtokens-api-llms.txt
+  - type: LLMsTxt
+    url: https://discountedtokens.com/llms.txt
+  - type: Conventions
+    url: conventions/discountedtokens-api-conventions.yml
+  - type: ErrorCatalog
+    url: errors/discountedtokens-api-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/discountedtokens-api-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/discountedtokens-api-changelog.yml
+  - type: ChangeLog
+    url: https://discountedtokens.com/updates.xml
+  - type: Plans
+    url: plans/discountedtokens-api-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/discountedtokens-api-rate-limits.yml
+  - type: X-MCPServerCandidate
+    url: mcp/discountedtokens-api-mcp.yml
+- aid: discountedtokens-api:discountedtokens-api-messages-api
+  name: DiscountedTokens API Messages API
+  description: The Messages API from DiscountedTokens API — 1 operation(s) for messages.
+  humanURL: https://discountedtokens.com/docs
+  baseURL: https://discountedtokens.com/v1
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/discountedtokens-api-messages-api-openapi.yml
+  - type: Documentation
+    url: https://discountedtokens.com/docs
+  - type: GettingStarted
+    url: https://discountedtokens.com/tutorials
+  - type: LLMsTxt
+    url: llms/discountedtokens-api-llms.txt
+  - type: LLMsTxt
+    url: https://discountedtokens.com/llms.txt
+  - type: Conventions
+    url: conventions/discountedtokens-api-conventions.yml
+  - type: ErrorCatalog
+    url: errors/discountedtokens-api-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/discountedtokens-api-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/discountedtokens-api-changelog.yml
+  - type: ChangeLog
+    url: https://discountedtokens.com/updates.xml
+  - type: Plans
+    url: plans/discountedtokens-api-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/discountedtokens-api-rate-limits.yml
+  - type: X-MCPServerCandidate
+    url: mcp/discountedtokens-api-mcp.yml
+- aid: discountedtokens-api:discountedtokens-api-models-api
+  name: DiscountedTokens API Models API
+  description: The Models API from DiscountedTokens API — 1 operation(s) for models.
+  humanURL: https://discountedtokens.com/docs
+  baseURL: https://discountedtokens.com/v1
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/discountedtokens-api-models-api-openapi.yml
+  - type: Documentation
+    url: https://discountedtokens.com/docs
+  - type: GettingStarted
+    url: https://discountedtokens.com/tutorials
+  - type: LLMsTxt
+    url: llms/discountedtokens-api-llms.txt
+  - type: LLMsTxt
+    url: https://discountedtokens.com/llms.txt
+  - type: Conventions
+    url: conventions/discountedtokens-api-conventions.yml
+  - type: ErrorCatalog
+    url: errors/discountedtokens-api-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/discountedtokens-api-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/discountedtokens-api-changelog.yml
+  - type: ChangeLog
+    url: https://discountedtokens.com/updates.xml
+  - type: Plans
+    url: plans/discountedtokens-api-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/discountedtokens-api-rate-limits.yml
+  - type: X-MCPServerCandidate
+    url: mcp/discountedtokens-api-mcp.yml
+- aid: discountedtokens-api:discountedtokens-api-responses-api
+  name: DiscountedTokens API Responses API
+  description: The Responses API from DiscountedTokens API — 1 operation(s) for responses.
+  humanURL: https://discountedtokens.com/docs
+  baseURL: https://discountedtokens.com/v1
+  tags:
+  - Responses
+  properties:
+  - type: OpenAPI
+    url: openapi/discountedtokens-api-responses-api-openapi.yml
+  - type: Documentation
+    url: https://discountedtokens.com/docs
+  - type: GettingStarted
+    url: https://discountedtokens.com/tutorials
+  - type: LLMsTxt
+    url: llms/discountedtokens-api-llms.txt
+  - type: LLMsTxt
+    url: https://discountedtokens.com/llms.txt
+  - type: Conventions
+    url: conventions/discountedtokens-api-conventions.yml
+  - type: ErrorCatalog
+    url: errors/discountedtokens-api-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/discountedtokens-api-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/discountedtokens-api-changelog.yml
+  - type: ChangeLog
+    url: https://discountedtokens.com/updates.xml
+  - type: Plans
+    url: plans/discountedtokens-api-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/discountedtokens-api-rate-limits.yml
+  - type: X-MCPServerCandidate
+    url: mcp/discountedtokens-api-mcp.yml
 maintainers:
   - FN: DiscountedTokens Support
     email: support@discountedtokens.com
@@ -108,6 +179,8 @@ x-generated:
   confidence: 95
   at: '2026-09-17T12:23:03.989Z'
 common:
+- type: AgentSkill
+  url: skills/_index.yml
 - type: VulnerabilityDisclosure
   url: security/discountedtokens-api-vulnerability-disclosure.yml
 - type: DomainSecurity
