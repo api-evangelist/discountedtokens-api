@@ -1,7 +1,7 @@
 {
   "provider": "discountedtokens-api",
   "sources": [
-    "discountedtokens-api-openapi.json"
+    "_original/discountedtokens-api-openapi.json"
   ],
   "outputs": [
     "discountedtokens-api-chat-api-openapi.yml",
@@ -9,14 +9,11 @@
     "discountedtokens-api-models-api-openapi.yml",
     "discountedtokens-api-responses-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi/discountedtokens-api-openapi.json"
-  ],
+  "archived": [],
   "errors": [],
-  "warnings": [
-    "no openapi/_original/ archive: this run re-split PREVIOUSLY REFINED output, so any base URL it carries is inherited from an earlier pass rather than read from a document the provider published"
-  ],
+  "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "discountedtokens-api-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "discountedtokens-api-openapi.json: tagged paths GET /models -> Models",
     "discountedtokens-api-openapi.json: tagged paths POST /chat/completions -> Chat",
@@ -26,7 +23,12 @@
     "discountedtokens-api-openapi.json: declared missing tag: Messages",
     "discountedtokens-api-openapi.json: declared missing tag: Models",
     "discountedtokens-api-openapi.json: declared missing tag: Responses",
-    "apis.yml register: written (+4 apis, 4 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "discountedtokens-api-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discountedtokens-api-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discountedtokens-api-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discountedtokens-api-responses-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
