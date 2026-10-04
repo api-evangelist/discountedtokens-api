@@ -33,40 +33,6 @@ tags_raw:
   - Developer Tools
   - AI Infrastructure
 apis:
-- aid: discountedtokens-api:discountedtokens-api-chat-api
-  name: DiscountedTokens API Chat API
-  description: The Chat API from DiscountedTokens API — 1 operation(s) for chat.
-  humanURL: https://discountedtokens.com/docs
-  baseURL: https://discountedtokens.com/v1
-  tags:
-  - Chat
-  properties:
-  - type: OpenAPI
-    url: openapi/discountedtokens-api-chat-api-openapi.yml
-  - type: Documentation
-    url: https://discountedtokens.com/docs
-  - type: GettingStarted
-    url: https://discountedtokens.com/tutorials
-  - type: LLMsTxt
-    url: llms/discountedtokens-api-llms.txt
-  - type: LLMsTxt
-    url: https://discountedtokens.com/llms.txt
-  - type: Conventions
-    url: conventions/discountedtokens-api-conventions.yml
-  - type: ErrorCatalog
-    url: errors/discountedtokens-api-problem-types.yml
-  - type: Lifecycle
-    url: lifecycle/discountedtokens-api-lifecycle.yml
-  - type: ChangeLog
-    url: changelog/discountedtokens-api-changelog.yml
-  - type: ChangeLog
-    url: https://discountedtokens.com/updates.xml
-  - type: Plans
-    url: plans/discountedtokens-api-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/discountedtokens-api-rate-limits.yml
-  - type: X-MCPServerCandidate
-    url: mcp/discountedtokens-api-mcp.yml
 - aid: discountedtokens-api:discountedtokens-api-messages-api
   name: DiscountedTokens API Messages API
   description: The Messages API from DiscountedTokens API — 1 operation(s) for messages.
@@ -147,6 +113,41 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/discountedtokens-api-responses-api-openapi.yml
+  - type: Documentation
+    url: https://discountedtokens.com/docs
+  - type: GettingStarted
+    url: https://discountedtokens.com/tutorials
+  - type: LLMsTxt
+    url: llms/discountedtokens-api-llms.txt
+  - type: LLMsTxt
+    url: https://discountedtokens.com/llms.txt
+  - type: Conventions
+    url: conventions/discountedtokens-api-conventions.yml
+  - type: ErrorCatalog
+    url: errors/discountedtokens-api-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/discountedtokens-api-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/discountedtokens-api-changelog.yml
+  - type: ChangeLog
+    url: https://discountedtokens.com/updates.xml
+  - type: Plans
+    url: plans/discountedtokens-api-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/discountedtokens-api-rate-limits.yml
+  - type: X-MCPServerCandidate
+    url: mcp/discountedtokens-api-mcp.yml
+- aid: discountedtokens-api:discountedtokens-api-chat-completions-api
+  name: DiscountedTokens API Chat Completions API
+  description: >-
+    The Chat Completions API from DiscountedTokens API — 1 operation(s) for chat completions.
+  humanURL: https://discountedtokens.com/docs
+  baseURL: https://discountedtokens.com/v1
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/discountedtokens-api-chat-completions-api-openapi.yml
   - type: Documentation
     url: https://discountedtokens.com/docs
   - type: GettingStarted

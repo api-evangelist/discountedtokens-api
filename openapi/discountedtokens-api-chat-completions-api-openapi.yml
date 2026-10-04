@@ -13,7 +13,7 @@ info:
 servers:
 - url: https://discountedtokens.com/v1
 tags:
-- name: Chat
+- name: Chat Completions
 paths:
   /chat/completions:
     post:
@@ -54,7 +54,7 @@ paths:
         '402':
           description: Insufficient credits
       tags:
-      - Chat
+      - Chat Completions
 components:
   securitySchemes:
     bearerAuth:
