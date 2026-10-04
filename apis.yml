@@ -73,6 +73,8 @@ apis:
   humanURL: https://discountedtokens.com/docs
   baseURL: https://discountedtokens.com/v1
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
