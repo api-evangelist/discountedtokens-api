@@ -1,0 +1,12 @@
+{
+ "url": "https://discountedtokens.com/openapi.json",
+ "requested_url": "https://discountedtokens.com/openapi.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 16213,
+ "sha256": "99af187bb0bac05997c4bb0130decb8fb14901e422cf58b7248e251bf9441f8a",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
