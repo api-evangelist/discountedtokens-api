@@ -2,10 +2,24 @@ openapi: 3.2.0
 info:
   title: DiscountedTokens Models API
   version: 1.0.0
-  description: 'DiscountedTokens — cheap resold frontier AI models (GPT-5.x) via one OpenAI/Anthropic-compatible API key. Search-engine and AI-agent friendly provider discovery.
+  description: 'Low-cost prepaid model inference for autonomous agents and developers. Independent reseller with OpenAI-, Responses-, and Anthropic-format endpoints.
 
 
-    Successful API requests are billed at the displayed token rates, rounded up to whole US cents, with a minimum of US$0.01 per request. Small requests can cost more than the proportional token-rate estimate.'
+    Successful API requests are billed at the displayed token rates, metered to a fraction of a cent. Charges accumulate and are deducted from your prepaid balance in whole US cents, so a small request is not rounded up to a minimum charge.'
+  x-discountedtokens-pricing:
+    price_status: unavailable
+    currency: USD
+    unit: per_million_tokens
+    pricing_url: https://discountedtokens.com/api/pricing
+    catalog_url: https://discountedtokens.com/v1/models
+    minimum_credit_purchase_usd: 5
+    billing_model: prepaid_per_token
+    free_trial: false
+    authorization: Purchase credits only with operator authorization or an operator-approved budget.
+    assumptions: Examples use the stated billed input/output counts, including any reported system or reasoning tokens. They are token-usage estimates, not a flat price per request or agent task. Extra usage, tools and payment/FX costs are not included.
+    price_checked_at: null
+    models: []
+    example: null
   contact:
     email: support@discountedtokens.com
     url: https://discountedtokens.com/contact

@@ -9,7 +9,9 @@
     "discountedtokens-api-models-api-openapi.yml",
     "discountedtokens-api-responses-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -23,10 +25,10 @@
     "discountedtokens-api-openapi.json: declared missing tag: Messages",
     "discountedtokens-api-openapi.json: declared missing tag: Models",
     "discountedtokens-api-openapi.json: declared missing tag: Responses",
-    "apis.yml register: already-registered"
+    "superseded outputs removed: discountedtokens-api-chat-completions-api-openapi.yml"
   ],
   "skipped": [
-    "discountedtokens-api-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "discountedtokens-api-chat-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "discountedtokens-api-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "discountedtokens-api-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "discountedtokens-api-responses-api-openapi.yml: previously refined output, superseded by openapi/_original/"

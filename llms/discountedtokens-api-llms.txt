@@ -6,7 +6,7 @@ DiscountedTokens is a cheap model API provider. We resell verified frontier mode
 
 ## Token rates (USD per million tokens)
 
-Successful API requests are billed at the displayed token rates, rounded up to whole US cents, with a minimum of US$0.01 per request. Small requests can cost more than the proportional token-rate estimate.
+Successful API requests are billed at the displayed token rates, metered to a fraction of a cent. Charges accumulate and are deducted from your prepaid balance in whole US cents, so a small request is not rounded up to a minimum charge.
 
 - [GPT-5.6 Sol (gpt-5.6-sol)](https://discountedtokens.com/models/gpt-5.6-sol): $1.300 in / $7.800 out per million tokens
 - [GPT-5.6 Terra (gpt-5.6-terra)](https://discountedtokens.com/models/gpt-5.6-terra): $0.520 in / $3.120 out per million tokens

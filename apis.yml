@@ -5,7 +5,7 @@ description: >-
   with usage-based prepaid billing (no subscription, no free trial).
 url: https://raw.githubusercontent.com/api-evangelist/discountedtokens-api/refs/heads/main/apis.yml
 created: '2026-09-17'
-modified: '2026-09-17'
+modified: '2026-10-05'
 specificationVersion: '0.21'
 image: https://discountedtokens.com/og-image.png
 tags:
@@ -214,6 +214,25 @@ common:
   url: https://discountedtokens.com/guest
 - type: Blog
   url: https://discountedtokens.com/updates
+x-correction-request:
+  requested: '2026-10-05'
+  source:
+  - 'apis.io report_correction (relationship: provider, anonymous), sk 2026-10-05T12:30:19.008Z#p9ue33'
+  - https://discountedtokens.com/openapi.json
+  request: 'The info.description billing paragraph in all four split OpenAPIs describes a US$0.01 per-request minimum and per-request
+    rounding, which is retired; correct text: requests are billed at the displayed token rates and metered below one cent, costs
+    accumulate and are deducted from the prepaid balance in whole US cents, a small request is not individually rounded up to a minimum
+    charge, and a prepaid balance purchase is separate from per-request usage. Refresh from the canonical first-party OpenAPI. The chat
+    API page links openapi/discountedtokens-api-chat-api-openapi.yml, which 404s; the manifest names
+    openapi/discountedtokens-api-chat-completions-api-openapi.yml. Do not add numeric rate/discount comparisons.'
+  applied: '2026-10-05'
+  applied_note: 'Verified against https://discountedtokens.com/openapi.json (2026-10-05), whose info.description states the new metering
+    rule. openapi/_original refreshed from that document and re-split (same four files and aids); each split info.description is the
+    canonical first paragraph plus its billing paragraph verbatim (the transient pricing-status paragraph is left out to stay inside the
+    500-character description limit). The same retired rule was also corrected in plans/discountedtokens-api-plans-pricing.yml (minimum_charge_per_request
+    0.01 and rounding removed) and llms/discountedtokens-api-llms.txt (billing line only). No rates or discount comparisons added. Chat link:
+    apis.yml already names only discountedtokens-api-chat-completions-api (aid renamed by the 2026-10-04 refine); every OpenAPI pointer names
+    a file on disk; live apis.io serves the chat-completions page (200, links the existing file) and the old chat-api page already 404s.'
 x-enrichment:
   date: '2026-09-17'
   status: enriched

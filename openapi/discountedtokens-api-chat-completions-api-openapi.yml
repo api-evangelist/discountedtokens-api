@@ -2,10 +2,24 @@ openapi: 3.2.0
 info:
   title: DiscountedTokens Chat API
   version: 1.0.0
-  description: 'DiscountedTokens — cheap resold frontier AI models (GPT-5.x) via one OpenAI/Anthropic-compatible API key. Search-engine and AI-agent friendly provider discovery.
+  description: 'Low-cost prepaid model inference for autonomous agents and developers. Independent reseller with OpenAI-, Responses-, and Anthropic-format endpoints.
 
 
-    Successful API requests are billed at the displayed token rates, rounded up to whole US cents, with a minimum of US$0.01 per request. Small requests can cost more than the proportional token-rate estimate.'
+    Successful API requests are billed at the displayed token rates, metered to a fraction of a cent. Charges accumulate and are deducted from your prepaid balance in whole US cents, so a small request is not rounded up to a minimum charge.'
+  x-discountedtokens-pricing:
+    price_status: unavailable
+    currency: USD
+    unit: per_million_tokens
+    pricing_url: https://discountedtokens.com/api/pricing
+    catalog_url: https://discountedtokens.com/v1/models
+    minimum_credit_purchase_usd: 5
+    billing_model: prepaid_per_token
+    free_trial: false
+    authorization: Purchase credits only with operator authorization or an operator-approved budget.
+    assumptions: Examples use the stated billed input/output counts, including any reported system or reasoning tokens. They are token-usage estimates, not a flat price per request or agent task. Extra usage, tools and payment/FX costs are not included.
+    price_checked_at: null
+    models: []
+    example: null
   contact:
     email: support@discountedtokens.com
     url: https://discountedtokens.com/contact
@@ -37,6 +51,9 @@ paths:
                   - gpt-5.6-sol
                   - gpt-5.6-terra
                   - gpt-5.5
+                  - gpt-5.6
+                  - gpt-6-astra
+                  - codex-auto-review
                 messages:
                   type: array
                   items:
@@ -49,6 +66,13 @@ paths:
       responses:
         '200':
           description: Completion
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  usage:
+                    $ref: '#/components/schemas/Usage'
         '401':
           description: Invalid key
         '402':
@@ -56,6 +80,32 @@ paths:
       tags:
       - Chat Completions
 components:
+  schemas:
+    Usage:
+      type: object
+      description: Successful API requests are billed at the displayed token rates, metered to a fraction of a cent. Charges accumulate and are deducted from your prepaid balance in whole US cents, so a small request is not rounded up to a minimum charge.
+      properties:
+        prompt_tokens:
+          type: integer
+        completion_tokens:
+          type: integer
+        total_tokens:
+          type: integer
+        reseller_cost_usd:
+          type: string
+          description: Exact metered cost of this request in USD, six decimals.
+        reseller_cost_micros:
+          type: integer
+          description: Exact metered cost in micro-USD (1e-6 USD), before whole-cent deduction.
+        charged_cents:
+          type: integer
+          description: Whole US cents deducted from the prepaid balance for this request; the sub-cent remainder carries to later requests.
+        sell_rate_in_usd:
+          type: number
+          description: Input rate applied, USD per million tokens.
+        sell_rate_out_usd:
+          type: number
+          description: Output rate applied, USD per million tokens.
   securitySchemes:
     bearerAuth:
       type: http

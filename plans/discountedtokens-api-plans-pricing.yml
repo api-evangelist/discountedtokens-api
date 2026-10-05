@@ -10,11 +10,14 @@ plan_count: 0
 billing:
   unit: tokens
   currency: USD
-  minimum_charge_per_request: 0.01
-  rounding: rounded up to whole US cents
+  metering: metered to a fraction of a cent; accumulated charges deducted from the prepaid balance in whole US cents
+  minimum_charge_per_request: none
   note: >-
-    Successful requests are billed at the displayed token rates, minimum US$0.01 per request; small
-    requests can cost more than the proportional token-rate estimate.
+    Successful API requests are billed at the displayed token rates, metered to a fraction of a cent.
+    Charges accumulate and are deducted from your prepaid balance in whole US cents, so a small request is
+    not rounded up to a minimum charge. A prepaid credit purchase is a balance purchase, not a per-request price.
+  note_source: https://discountedtokens.com/openapi.json info.description (2026-10-05); replaces the retired
+    US$0.01 per-request minimum and per-request rounding rule
 purchase:
   method: prepaid credits, guest checkout
   url: https://discountedtokens.com/guest
