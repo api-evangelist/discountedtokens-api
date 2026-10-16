@@ -2,7 +2,7 @@
   "repo": "discountedtokens-api",
   "feeds": [
     {
-      "source": "https://discountedtokens.com/guest",
+      "source": "https://discountedtokens.com/updates",
       "feed_url": "https://discountedtokens.com/updates.xml",
       "title": "",
       "saved": 0,
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 4,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
